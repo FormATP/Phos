@@ -93,7 +93,7 @@ section h2 {
 .hero { padding: 4.5rem 0 7rem; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1rem; align-items: center; }
 .hero h1 { font-size: clamp(2.1rem, 4.7vw, 3.7rem); margin-bottom: .5em; }
-.hero-art { width: 100%; max-width: 520px; justify-self: center; transform: rotate(-3deg); margin-right: -1rem; }
+.hero-art { width: 100%; max-width: 560px; height: auto; justify-self: center; margin-right: -1.5rem; }
 .page-hero { padding: 4.2rem 0 3.4rem; }
 .page-hero h1 { font-size: clamp(2.2rem, 5.4vw, 4rem); max-width: 16ch; }
 
@@ -214,3 +214,19 @@ section h2 {
   .hero { padding: 3rem 0 6rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* Mostriciattoli a pastello come sfondo delle sezioni */
+.has-mascot { position: relative; overflow: hidden; }
+.has-mascot > .container { position: relative; z-index: 1; }
+.has-mascot::before {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  background: var(--mascot) no-repeat center / contain;
+  width: clamp(190px, 22vw, 300px); aspect-ratio: 520 / 560;
+}
+.mascot-orange::before { --mascot: url("../assets/mostro-arancio.webp"); width: clamp(140px, 15vw, 190px); aspect-ratio: 520 / 584; right: 7%; top: 1.2rem; transform: rotate(7deg); }
+.mascot-green::before { --mascot: url("../assets/mostro-verde.webp"); width: clamp(140px, 15vw, 200px); aspect-ratio: 520 / 560; right: 8%; bottom: 1.5rem; transform: rotate(-4deg); }
+@media (max-width: 720px) {
+  .has-mascot::before { width: 120px; opacity: .45; }
+  .mascot-orange::before { top: .8rem; right: 3%; }
+  .mascot-green::before { bottom: .8rem; right: 3%; }
+}
