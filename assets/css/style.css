@@ -233,3 +233,15 @@ section h2 {
   .mascot-orange::before { bottom: .8rem; left: 3%; }
   .mascot-green::before { bottom: .8rem; right: 3%; }
 }
+
+/* pulsante CV nel footer */
+.site-footer a.btn { color: var(--ink); background: var(--yellow); text-decoration: none; border-color: var(--yellow); }
+.site-footer a.btn:hover { background: var(--pink); border-color: var(--pink); color: var(--ink); }
+
+/* numeri chiave nelle schede progetto */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.4rem 0; }
+.facts div { border: 2px solid var(--ink); background: var(--yellow); padding: .9rem 1rem; }
+.facts div:nth-child(2n) { background: var(--pink-paper); }
+.facts div:nth-child(3n) { background: #c9f3de; }
+.facts strong { display: block; font-family: var(--font-head); font-weight: 800; font-size: 2rem; line-height: 1; }
+.facts span { font-size: .85rem; font-weight: 600; }
