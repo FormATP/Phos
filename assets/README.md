@@ -6,7 +6,7 @@ Sito statico (HTML, CSS e JavaScript, nessuna dipendenza e nessun build) per l'E
 
 ```
 index.html          Home: chi siamo, ambiti, progetti, rete, organi, contatti
-progetti.html       Schede delle candidature (H.U.B., Strade Sicure, Fuori Campo)
+progetti.html       Schede delle candidature (H.U.B., Strade Sicure, Fuori Campo, N.E.X.T.)
 trasparenza.html    Scheda dell'ente e sintesi dello statuto
 css/style.css       Stili
 js/main.js          Menu mobile

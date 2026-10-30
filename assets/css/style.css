@@ -91,9 +91,10 @@ section h2 {
 /* Hero */
 .hero, .page-hero { background: var(--pink-paper); border-bottom: 2px solid var(--ink); position: relative; overflow: hidden; }
 .hero { padding: 4.5rem 0 7rem; }
-.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1rem; align-items: center; }
+.hero-grid { position: relative; display: block; min-height: 470px; }
+.hero-text { position: relative; z-index: 1; max-width: 660px; }
 .hero h1 { font-size: clamp(2.1rem, 4.7vw, 3.7rem); margin-bottom: .5em; }
-.hero-art { width: 100%; max-width: 560px; height: auto; justify-self: center; margin-right: -1.5rem; }
+.hero-art { position: absolute; z-index: 0; right: -7rem; top: 46%; transform: translateY(-50%); width: min(66vw, 860px); max-width: none; height: auto; pointer-events: none; }
 .page-hero { padding: 4.2rem 0 3.4rem; }
 .page-hero h1 { font-size: clamp(2.2rem, 5.4vw, 4rem); max-width: 16ch; }
 
@@ -193,8 +194,8 @@ section h2 {
 @media (max-width: 900px) {
   .grid.cols-3, .grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-art { max-width: 340px; margin: 0; }
+  .hero-grid { min-height: 0; }
+  .hero-art { position: relative; right: auto; top: auto; transform: none; width: 100%; max-width: 440px; margin: 1.5rem auto 0; display: block; }
   .hero h1 { max-width: none; }
 }
 @media (max-width: 720px) {
@@ -223,10 +224,12 @@ section h2 {
   background: var(--mascot) no-repeat center / contain;
   width: clamp(190px, 22vw, 300px); aspect-ratio: 520 / 560;
 }
-.mascot-orange::before { --mascot: url("../assets/mostro-arancio.webp"); width: clamp(140px, 15vw, 190px); aspect-ratio: 520 / 584; right: 7%; top: 1.2rem; transform: rotate(7deg); }
+.mascot-orange { padding-bottom: 14rem; }
+.mascot-orange::before { --mascot: url("../assets/mostro-arancio.webp"); width: clamp(140px, 15vw, 190px); aspect-ratio: 520 / 584; left: 4%; bottom: 1.2rem; transform: rotate(-6deg); }
 .mascot-green::before { --mascot: url("../assets/mostro-verde.webp"); width: clamp(140px, 15vw, 200px); aspect-ratio: 520 / 560; right: 8%; bottom: 1.5rem; transform: rotate(-4deg); }
 @media (max-width: 720px) {
   .has-mascot::before { width: 120px; opacity: .45; }
-  .mascot-orange::before { top: .8rem; right: 3%; }
+  .mascot-orange { padding-bottom: 10rem; }
+  .mascot-orange::before { bottom: .8rem; left: 3%; }
   .mascot-green::before { bottom: .8rem; right: 3%; }
 }
