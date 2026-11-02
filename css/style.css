@@ -260,3 +260,38 @@ section h2 {
 .tags li:nth-child(3n+1) { background: var(--yellow); }
 .tags li:nth-child(3n+2) { background: #c9f3de; }
 @media (max-width: 720px) { .member { grid-template-columns: 1fr; } .member .photo { max-width: 220px; } }
+
+/* ---- rifiniture mobile ---- */
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .container { width: min(100% - 2rem, var(--max)); }
+  /* numeri in una riga sola */
+  .stats { grid-template-columns: repeat(3, 1fr); margin-top: -3rem; }
+  .stat { border-right: 2px solid var(--ink); border-bottom: 0; padding: 1rem .4rem 1.1rem; }
+  .stat:last-child { border-right: 0; }
+  .stat strong { font-size: 1.9rem; background-size: 100% 100%; }
+  .stat span { font-size: .58rem; letter-spacing: .06em; }
+  /* schede più compatte */
+  .section { padding: 3rem 0; }
+  .card { padding: 1.1rem 1.15rem; }
+  .card .icon { margin-bottom: .35rem; }
+  .card h3 { font-size: 1.1rem; margin-bottom: .35rem; }
+  .card p { font-size: .94rem; line-height: 1.5; }
+  .grid { gap: 1rem; }
+  /* schede progetto */
+  .project { padding: 2.2rem 0; }
+  .project h2 { font-size: 1.7rem; }
+  .meta { padding: .8rem 1rem; }
+  .facts { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+  .facts strong { font-size: 1.6rem; }
+  /* team nella home: pulsanti in colonna e spazio per il mostriciattolo */
+  #governance { padding-bottom: 9rem; }
+  #governance .btn { display: block; text-align: center; }
+  #governance p a:not(.btn) { display: inline-block; margin-top: .9rem; }
+  /* pagina team */
+  .member { gap: 1.2rem; padding: 2rem 0; }
+  .member .photo { max-width: 170px; margin-left: 4px; }
+  .member h2 { font-size: 1.8rem; }
+  .tags li { font-size: .82rem; padding: .2rem .7rem; }
+  .footer-grid { gap: 1.4rem; }
+}
